@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Gamedev Canvas Workshop</title>
+	<style>
+		* { padding: 0; margin: 0; }
+		canvas { background: #eee; display: block; margin: 0 auto; }
+	</style>
+</head>
+<body>
+
+	<canvas id="myCanvas" width="480" height="320"></canvas>
+
+	<script>
+		var canvas = document.getElementById("myCanvas");
+		var ctx = canvas.getContext("2d");
+
+		//this page gives the examples on how to make different shapes and colors and combinations
+
+		ctx.beginPath();
+			ctx.rect(20, 40, 50, 50); //denotes a rectangle the first 2 numbers are the coordinates for the top left corner, the last two are the size of the rect
+			ctx.fillStyle = "#FF0000"; //this is the color that tells the .fill() method what color to "paint" the rect
+			ctx.fill();
+		ctx.closePath();
+
+		ctx.beginPath();
+			ctx.arc(240, 160, 20, 0, Math.PI*2, false); //arc takes 6 params, x and y coordinates of the "arcs" center, the arc radias, the start angle and end angle (what angle to start and finish drawing the circle, in radians), directiong of drawing (false for clock wise)
+			ctx.fillStyle = "green";
+			ctx.fill();
+		ctx.closePath();
+
+		ctx.beginPath();
+			ctx.rect(160, 10, 100, 40);
+			ctx.strokeStyle = "rgba(0, 0, 255, 0.5)"; //the first three numbers are colors, the last is the transparecy
+			ctx.stroke(); //stroke is just the outer permiter of the rect
+		ctx.closePath();
+	</script>
+</body>
+</html>
+
